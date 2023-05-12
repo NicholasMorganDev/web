@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Footer from "./components/Footer.jsx"
+import { useState } from 'react';
+import './App.scss';
+import BucketList from "./components/BucketList.jsx";
+import Header from "./components/Input.jsx";
+import Nav from "./components/Nav.jsx";
 
 function App() {
+  const [ itemList, setItemList ] = useState();
+  const [ loading, setLoading ] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav/>
+      <h1>Bucket List 101</h1>
+      
+      <Header setLoading={setLoading} setItemList={setItemList}/>
+      <BucketList loading={loading} itemList={itemList} setItemList={setItemList} setLoading={setLoading}/>
+
+      <Footer/>
+    </>
   );
 }
 

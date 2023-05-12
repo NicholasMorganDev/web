@@ -1,0 +1,44 @@
+body {
+  background-image: url("https://imgix.bustle.com/uploads/shutterstock/2022/7/6/4d77299c-310a-49d5-973e-1176a5777c97-shutterstock-1717823722.jpg?w=1200&h=630&fit=crop&crop=focalpoint&fm=jpg&fp-x=0.6733&fp-y=0.5467");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+nav {
+  background-color: white;
+  ul {
+    list-style-type: none;
+    flex-direction: row;
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-around;
+    padding: 15px;
+    font-weight: 700;
+  }
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  background: rgb(147,10,228);
+  background: linear-gradient(346deg, rgba(147,10,228,0.9318321078431373) 50%, rgba(33,85,175,0.9542410714285714) 59%);
+}
+
+header, .ant-list {
+  margin-right: 700px;
+}
+
+.ant-list-item {
+ background-color: rgba(245, 245, 245, 0.667);
+}
+
+footer {
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.471);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
