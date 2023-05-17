@@ -11,10 +11,15 @@ function App() {
   return (
     <>
       <Nav/>
-      <h1>Bucket List 101</h1>
-      
-      <Header setLoading={setLoading} setItemList={setItemList}/>
-      <BucketList loading={loading} itemList={itemList} setItemList={setItemList} setLoading={setLoading}/>
+          
+      <div className="main-container">
+        <div className="text">
+          <h1>Bucket List 101</h1>
+          <p>Peak Pursuits: Scaling Majestic Mountains</p>
+        </div>
+        <Header setLoading={setLoading} setItemList={setItemList}/>
+        <BucketList loading={loading} itemList={itemList} setItemList={setItemList} setLoading={setLoading}/>
+      </div>
 
       <Footer/>
     </>

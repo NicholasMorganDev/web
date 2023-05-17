@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+
+* { font-family: 'Spinnaker', sans-serif; }
+
 body {
-  background-image: url("https://imgix.bustle.com/uploads/shutterstock/2022/7/6/4d77299c-310a-49d5-973e-1176a5777c97-shutterstock-1717823722.jpg?w=1200&h=630&fit=crop&crop=focalpoint&fm=jpg&fp-x=0.6733&fp-y=0.5467");
+  background-image: url("https://images.pexels.com/photos/12041827/pexels-photo-12041827.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.357);
+  background-blend-mode: darken;
+
 }
 
 nav {
@@ -20,15 +27,40 @@ nav {
 }
 
 h1 {
-  color: white;
-  font-size: 40px;
+  // color: white;
+  text-align: center;
+  font-size: clamp(80px, 4vw, 110px);
   font-weight: 700;
-  background: rgb(147,10,228);
-  background: linear-gradient(346deg, rgba(147,10,228,0.9318321078431373) 50%, rgba(33,85,175,0.9542410714285714) 59%);
+  margin: 0;
+  padding: 0;
+  
+  background: #121FCF;
+background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+-webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+  // background: #9333FF;
+  // background: linear-gradient(to right, #9333FF 38%, #2200FF 100%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
 
-header, .ant-list {
-  margin-right: 700px;
+// header, .ant-list {
+  
+// }
+
+.main-container {
+  width: clamp(90%, 4vw, 70%);
+  margin: 0 auto;
+
+  .text {
+    font-size: clamp(1.0rem, 4vw, 1.3rem);
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
 }
 
 .ant-list-item {
@@ -37,8 +69,12 @@ header, .ant-list {
 
 footer {
   text-align: center;
-  background-color: rgba(128, 128, 128, 0.471);
+  //background-color: rgba(128, 128, 128, 0.471);
   position: absolute;
   bottom: 0;
   width: 100%;
+  p {
+    color: white;
+    text-shadow: 2px 2px 5px red;
+  }
 }

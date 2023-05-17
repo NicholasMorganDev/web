@@ -19,7 +19,7 @@ export default function Header ({setItemList, setLoading}) { //change name
       body: JSON.stringify(newItem)
     })
     const data = await response.json()
-    setItemList(data)
+    setItemList(data.filter(item => !item.done))
     setLoading(false)
     //reset value = ''
     //accepts true values
