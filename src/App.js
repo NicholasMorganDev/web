@@ -1,27 +1,28 @@
 import Footer from "./components/Footer.jsx"
 import { useState } from 'react';
 import './App.scss';
-import BucketList from "./components/BucketList.jsx";
-import Header from "./components/Input.jsx";
 import Nav from "./components/Nav.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./scenes/Home.jsx";
+import Login from "./components/LoginForm.jsx";
 
 function App() {
   const [ itemList, setItemList ] = useState();
   const [ loading, setLoading ] = useState(true);
+  const [ user, setUser ] = useState(false)
+
   return (
     <>
-      <Nav/>
-          
-      <div className="main-container">
-        <div className="text">
-          <h1>Bucket List 101</h1>
-          <p>Peak Pursuits: Scaling Majestic Mountains</p>
-        </div>
-        <Header setLoading={setLoading} setItemList={setItemList}/>
-        <BucketList loading={loading} itemList={itemList} setItemList={setItemList} setLoading={setLoading}/>
-      </div>
+      <BrowserRouter>
+        <Nav/>
 
-      <Footer/>
+        <Routes>
+          <Route path="/" element={<Home setLoading={setLoading} setItemList={setItemList} loading={loading} itemList={itemList} user={user} setUser={setUser}/>}/>
+          <Route path="/login" element={<Login setUser={setUser} user={user}/>}/>
+        </Routes>
+
+        <Footer/>
+      </BrowserRouter>
     </>
   );
 }

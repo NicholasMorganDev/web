@@ -6,22 +6,27 @@ export default function Header ({setItemList, setLoading}) { //change name
     
     setLoading(true)
 
+    const uid = localStorage.getItem("uid")
+
     const newItem = {
       done: false,
-      userId: 'me',
+      userId: uid,
       name: value,
     }
-    const response = await fetch('https://bucket-list-api-nm.web.app/bucket', {
+    const response = await fetch(`https://bucket-list-api-nm.web.app/bucket/${uid}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newItem)
     })
+    console.log(response)
     const data = await response.json()
     setItemList(data.filter(item => !item.done))
     setLoading(false)
-    //reset value = ''
+    console.log(data)
+    //value = ""
+    //reset value to blank
     //accepts true values
   }
   return (

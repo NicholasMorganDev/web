@@ -4,7 +4,8 @@ import { useEffect } from "react";
 export default function BucketList ({ loading, itemList, setItemList, setLoading }) {
   
   useEffect(() => {
-    fetch('https://bucket-list-api-nm.web.app/bucket')
+    const uid = localStorage.getItem("uid")
+    fetch(`https://bucket-list-api-nm.web.app/bucket/${uid}`)
       .then(resp => resp.json())
       .then(data => setItemList(data.filter(item => !item.done)))
       .catch(alert) //improve (modal?)
@@ -12,7 +13,8 @@ export default function BucketList ({ loading, itemList, setItemList, setLoading
   }, [])
 
   const handleUpdate = (itemId) => {
-    fetch(`https://bucket-list-api-nm.web.app/bucket/${itemId}`, {
+    const uid = localStorage.getItem("uid")
+    fetch(`https://bucket-list-api-nm.web.app/bucket/${uid}/${itemId}`, {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({done: true})
