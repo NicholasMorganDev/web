@@ -1,5 +1,6 @@
 import BucketList from "../components/BucketList";
 import Header from "../components/Input";
+import { List } from "antd";
 
 export default function Home({
   loading,
@@ -14,22 +15,16 @@ export default function Home({
       <div className="main-container">
         <div className="text">
           <h1>Bucket List 101</h1>
-          <p>Japan Japan Japan</p>
+          
+          {(user)
+            ? (List < 1)
+                ? <p>"The sooner you write down your ideas the sooner you will achieve your goals"</p>
+                : <p> ✅ : Deletes an Item</p>
+            : null
+          }
+          
         </div>
 
-        {user ? (
-          <>
-            <h2> Logged In </h2>
-            <button
-              onClick={() => {
-                setUser(false);
-                localStorage.setItem("token", "");
-              }}
-            >
-              Log Out
-            </button>
-          </>
-        ) : null}
         {!user ? (
           <>
             <h2>Please Login to See Your Dashboard!</h2>

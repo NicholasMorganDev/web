@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav/>
+        <Nav setUser={setUser} user={user}/>
 
         <Routes>
           <Route path="/" element={<Home setLoading={setLoading} setItemList={setItemList} loading={loading} itemList={itemList} user={user} setUser={setUser}/>}/>

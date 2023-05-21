@@ -70,6 +70,10 @@ h1 {
   }
 }
 
+h2 {
+  color: white;
+}
+
 .ant-list-item {
  background-color: rgba(245, 245, 245, 0.667);
 }
@@ -97,6 +101,14 @@ footer {
 
 .login-form {
   margin-top: 100px;
+}
+
+.log-out {
+  color: red;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .signup-button {
