@@ -11,7 +11,7 @@ const onFinishFailed = (errorInfo) => {
 
 
 
-export default function Login({user, setUser}) {
+export default function LoginForm ({user, setUser}) {
   const [formData, setFormData ] = useState({});
   const navigate = useNavigate();
 
@@ -49,6 +49,7 @@ export default function Login({user, setUser}) {
       <h1>Login</h1>
 
       <Form
+        className="login-form"
         onSubmit={handleLogin}
         name="basic"
         labelCol={{

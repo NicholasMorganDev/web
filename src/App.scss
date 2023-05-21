@@ -42,7 +42,7 @@ h1 {
   text-align: center;
   font-size: clamp(80px, 4vw, 110px);
   font-weight: 700;
-  margin: 0;
+  margin-top: 50px;
   padding: 0;
   color: black;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
@@ -77,9 +77,9 @@ h1 {
 footer {
   text-align: center;
   position: relative;
-  bottom: 0;
+  margin-bottom: 20px;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 100px;
   p, a {
     color: white;
     text-shadow: 4px 4px 10px black;
@@ -93,4 +93,18 @@ footer {
 
 .ant-form-item-required {
   color: white !important;
+}
+
+.login-form {
+  margin-top: 100px;
+}
+
+.signup-button {
+  margin-top: 80px;
+  color: white;
+  font-size: 20px;
+  margin-left: 120px;
+  a {
+    color: white;
+  }
 }
