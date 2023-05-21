@@ -1,5 +1,5 @@
 import Footer from "./components/Footer.jsx"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import Nav from "./components/Nav.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -10,6 +10,13 @@ function App() {
   const [ itemList, setItemList ] = useState();
   const [ loading, setLoading ] = useState(true);
   const [ user, setUser ] = useState(false)
+
+  useEffect(() => {
+    const uid = localStorage.getItem('uid')
+    if (uid) {
+      setUser(true)
+    }
+  }, [])
 
   return (
     <>
