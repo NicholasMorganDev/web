@@ -1,6 +1,9 @@
+import { useRef, useState } from "react";
 import { Input } from "antd";
 
 export default function Header ({setItemList, setLoading}) { //change name
+  const [element, setElement] = useState("")
+  const formRef = useRef(null)
   const handleAdd = async (value) => {
     if(value.length < 3) return
     
@@ -23,7 +26,7 @@ export default function Header ({setItemList, setLoading}) { //change name
     const data = await response.json()
     setItemList(data.filter(item => !item.done))
     setLoading(false)
-    //value = ""
+    setElement("")
     //reset value to blank
   }
   return (
@@ -32,6 +35,9 @@ export default function Header ({setItemList, setLoading}) { //change name
       placeholder="Add New Item Here!"
       allowClear
       enterButton="Add"
+      value={element}
+      onChange={e => setElement(e.target.value)}
+      ref={formRef}
       size="large"
       onSearch={handleAdd}
       />
