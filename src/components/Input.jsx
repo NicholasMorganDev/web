@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Input } from "antd";
 
-export default function Header ({setItemList, setLoading}) { //change name
+export default function Search ({setItemList, setLoading}) { //change name
   const [element, setElement] = useState("")
   const formRef = useRef(null)
   const handleAdd = async (value) => {

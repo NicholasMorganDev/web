@@ -1,6 +1,7 @@
+import { useState } from "react";
 import BucketList from "../components/BucketList";
-import Header from "../components/Input";
-import { List } from "antd";
+import Search from "../components/Input.jsx";
+
 
 export default function Home({
   loading,
@@ -9,20 +10,34 @@ export default function Home({
   setItemList,
   user,
   setUser,
-}) {
+}) 
+{
+
+const [ message, setMessage ] = useState(false);
+
+
+
   return (
     <>
       <div className="main-container">
         <div className="text">
           <h1>Bucket List 101</h1>
           
-          {(user)
-            ? (List < 1)
+          {/* {(BucketList) 
+            ? () => setMessage(true)
+            : null } */}
+
+          {/* {(user)
+            ? (!message)
                 ? <p>"The sooner you write down your ideas the sooner you will achieve your goals"</p>
                 : <p> ✅ : Deletes an Item</p>
             : null
-          }
+          } */}
           
+          <p>"The sooner you write down your ideas the sooner you will achieve your goals"</p>
+          <br/>
+          <p> ✅ : Deletes an Item</p>
+
         </div>
 
         {!user ? (
@@ -32,7 +47,7 @@ export default function Home({
           </div>
         ) : (
           <>
-            <Header setLoading={setLoading} setItemList={setItemList} />
+            <Search setLoading={setLoading} setItemList={setItemList} />
             <BucketList
               loading={loading}
               itemList={itemList}
