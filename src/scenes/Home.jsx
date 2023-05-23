@@ -26,9 +26,10 @@ export default function Home({
         </div>
 
         {!user ? (
-          <>
+          <div className="welcome-m">
+            <p>Welcome! If you have been searching for a place to organize your thoughts, goals and future adventure destinations, then look no further. Here we offer everything you might want in order to get started. Make your dreams a reality one line at a time! </p>
             <h2>Please Login to See Your Dashboard!</h2>
-          </>
+          </div>
         ) : (
           <>
             <Header setLoading={setLoading} setItemList={setItemList} />
